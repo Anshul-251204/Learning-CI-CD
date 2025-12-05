@@ -9,14 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/user', (req, res) => {
- 
-       res.json(
-    
-    
-    
-    { message:
-         'User GET working', 
-         users: ['John', 'Anshul'] });
+  res.json({ message: 'User GET working', users: ['John', 'Anshul'] });
 });
 
 app.post('/user', (req, res) => {
