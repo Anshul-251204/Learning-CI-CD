@@ -8,15 +8,26 @@ app.get('/', (req, res) => {
   res.json({ message: 'API is working' });
 });
 
-app.get('/user', (req, res) => {
+app.get('/user',
+    
+    (req,
+        
+        res) => {
  
        res.json(
     
     
     
-    { message:
-         'User GET working', 
-         users: ['John', 'Anshul'] });
+    {
+         message:
+         'User GET working',
+         
+         
+         users: ['John', 'Anshul'] 
+        });
+
+
+
 });
 
 app.post('/user', (req, res) => {
