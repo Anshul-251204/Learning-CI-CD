@@ -1,0 +1,23 @@
+name: Check Code Formatting Via Prettier
+
+on:
+    pull_request :
+        branches :
+            - main
+
+jobs:
+    check-formatting:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: action/checkout@v3
+            - name: Use Node.js
+              uses: action/setup-node@v3
+              with:
+                node-version: "23"
+
+            - name : Installing Dependencies
+              run : npm install
+
+            - name : Check Formating
+              run: npm run format:check  
