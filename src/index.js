@@ -16,7 +16,13 @@ app.get('/user', (req, res) => {
     
     { message:
          'User GET working', 
-         users: ['John', 'Anshul'] });
+         users:
+         
+         ['John', 
+            
+            'Anshul'] 
+        }
+    );
 });
 
 app.post('/user', (req, res) => {
