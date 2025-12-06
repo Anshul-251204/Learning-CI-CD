@@ -32,3 +32,15 @@ jobs:
 
       - name: Verify Docker Image
         run: docker pull ${{ vars.DOCKER_USERNAME }}/testcd:latest
+
+      - name: Run on EC2
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker pull ${{ vars.DOCKER_USERNAME }}/testcd:latest
+            docker stop testcd || true
+            docker rm testcd || true
+            docker run -d --name testcd -p 80:4000 ${{ vars.DOCKER_USERNAME }}/testcd:latest
