@@ -24,6 +24,10 @@ app.post('/todo', (req, res) => {
   res.json({ message: 'Todo POST working', received: req.body });
 });
 
+app.get('/test-ci-cd', (req, res) => {
+  res.json({ message: 'CI CD is working fine 🚀🚀' });
+});
+
 const PORT = 4000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
